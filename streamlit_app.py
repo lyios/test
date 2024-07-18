@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
-import streamlit as st
+import altair as alt 
 import matplotlib.pyplot as plt
 
 st.title('点数表示')
