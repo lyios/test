@@ -7,5 +7,6 @@ st.title('点数表示')
 
 st.write('あなたの点数を教えてください')
 
+number = st.number_input('Input any number', 0)
 
 
