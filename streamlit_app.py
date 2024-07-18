@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import altair as alt 
-import matplotlib.pyplot as plt
 
 st.title('点数表示')
 
@@ -13,14 +12,17 @@ number = st.number_input('社会', 50)
 number = st.number_input('理科', 50)
 number = st.number_input('英語', 50)
 
-data = {
-    '科目': ['国語', '数学', '社会', '理科','英語'],
-    '点数': [10, 15, 7, 20]
-}
-df = pd.DataFrame(data)
+categories = ['国語', '数学', '社会', '理科','英語']
+
+# スライダーで値を変更
+values = [st.number_input(f'{cat}の値', min_value=0, max_value=100, value=10) for cat in categories]
+
+# データフレームの作成
+df = pd.DataFrame({'科目': categories, '点数': values})
 
 # Streamlitのタイトル
-st.title("カスタマイズされた棒グラフの例")
+st.title("科目と点数の棒グラフ")
+
 
 # 棒グラフの作成
 plt.bar(df['科目'], df['点数'], color='blue')
