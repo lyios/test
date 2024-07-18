@@ -9,7 +9,7 @@ st.write('あなたの点数を教えてください')
 categories = ['国語', '数学', '社会', '理科','英語']
 
 # スライダーで値を変更
-values = [st.number_input(f'{cat}の値', min_value=0, max_value=100, value=10) for cat in categories]
+values = [st.number_input(f'{cat}', min_value=0, max_value=100, value=10) for cat in categories]
 
 # データフレームの作成
 df = pd.DataFrame({'科目': categories, '点数': values})
